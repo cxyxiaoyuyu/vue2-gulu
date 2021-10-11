@@ -1,6 +1,6 @@
 language: node_js
 install: 
-  - yarn
+  - npm i
 node_js:
   - "10"
   - "11"

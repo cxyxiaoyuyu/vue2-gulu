@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue 造轮子</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --button-height: 32px;
+      --font-size: 14px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --border-radius: 4px;
+      --color: #333;
+      --border-color: #999;
+      --border-color-hover: #666;
+    }
+
+    #app {
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+    <g-button icon-name="setting" icon-position="icon-left" :loading="loading2" @click="loading2 = !loading2">设置
+    </g-button>
+    <g-button icon-name="download" icon-position="icon-right" :loading="loading3" @click="loading3 = !loading3">下载
+    </g-button>
+    <g-button icon-name="download" icon-position="icon-right">下载</g-button>
+
+
+    <div class="box">
+      <g-input v-model="message"></g-input>
+      {{ message }} <button @click="message+=1">+1</button>
+      <g-input value="disabled" disabled></g-input>
+      <g-input value="readonly" readonly></g-input>
+      <g-input value="" error="不能为空" @change="changeInput"></g-input>
+    </div>
+  </div>
+  <script src="./src/app.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>
+
+
+<!-- <div class="box">
+    <g-input v-model="message"></g-input>
+    {{ message }} <button @click="message+=1">+1</button>
+    <g-input value="disabled" disabled></g-input>
+    <g-input value="readonly" readonly></g-input>
+    <g-input value="" error="不能为空" @change="changeInput"></g-input>
+</div>
+
+<g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+<g-button icon-name="setting" icon-position="icon-left" :loading="loading2" @click="loading2 = !loading2">设置</g-button>
+<g-button icon-name="download" icon-position="icon-right" :loading="loading3" @click="loading3 = !loading3">下载</g-button>
+<g-button icon-name="download" icon-position="icon-right">下载</g-button>
+<button-group><button-group> -->

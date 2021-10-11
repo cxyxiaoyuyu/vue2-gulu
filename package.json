@@ -1,6 +1,6 @@
 {
-  "name": "xiaoyu-test-1",
-  "version": "0.0.15",
+  "name": "xiaoyu-vue2-gulu",
+  "version": "0.0.2",
   "description": "",
   "main": "./dist/index.js",
   "files": [
@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-minify && karma start --single-run",
+    "build": "parcel build index.js --no-minify"
   },
   "repository": {
     "type": "git",

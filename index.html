@@ -24,27 +24,37 @@
     #app {
       margin: 20px;
     }
+
+    .row {
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 
 <body>
   <div id="app">
-    <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-    <g-button icon-name="setting" icon-position="icon-left" :loading="loading2" @click="loading2 = !loading2">设置
-    </g-button>
-    <g-button icon-name="download" icon-position="icon-right" :loading="loading3" @click="loading3 = !loading3">下载
-    </g-button>
-    <g-button icon-name="download" icon-position="icon-right">下载</g-button>
+    <div class="row">
+      <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+      <g-button icon="setting" icon-position="icon-left" :loading="loading2" @click="loading2 = !loading2">设置
+      </g-button>
+      <g-button icon="download" icon-position="icon-right" :loading="loading3" @click="loading3 = !loading3">下载
+      </g-button>
+      <g-button icon="download" icon-position="icon-right">下载xxxx</g-button>
+      <button-group></button-group>
+    </div>
+    
 
-
-    <div class="box">
+    <div class="row">
       <g-input v-model="message"></g-input>
-      {{ message }} <button @click="message+=1">+1</button>
+      <g-button @click="message+=1">+1</g-button> {{message}}
       <g-input value="disabled" disabled></g-input>
       <g-input value="readonly" readonly></g-input>
       <g-input value="" error="不能为空" @change="changeInput"></g-input>
     </div>
+      
   </div>
+
+
   <script src="./src/app.js"></script>
   <script>
 
@@ -52,18 +62,3 @@
 </body>
 
 </html>
-
-
-<!-- <div class="box">
-    <g-input v-model="message"></g-input>
-    {{ message }} <button @click="message+=1">+1</button>
-    <g-input value="disabled" disabled></g-input>
-    <g-input value="readonly" readonly></g-input>
-    <g-input value="" error="不能为空" @change="changeInput"></g-input>
-</div>
-
-<g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-<g-button icon-name="setting" icon-position="icon-left" :loading="loading2" @click="loading2 = !loading2">设置</g-button>
-<g-button icon-name="download" icon-position="icon-right" :loading="loading3" @click="loading3 = !loading3">下载</g-button>
-<g-button icon-name="download" icon-position="icon-right">下载</g-button>
-<button-group><button-group> -->

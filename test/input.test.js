@@ -54,7 +54,6 @@ describe('Input组件: ', () => {
         }
       }).$mount()
       const useElement = vm.$el.querySelector('use')
-      console.log(useElement.getAttribute('xlink:href'))
       expect(useElement.getAttribute('xlink:href')).to.equal('#icon-error')
       const errorMessage = vm.$el.querySelector('.errorMessage')
       expect(errorMessage.innerText).to.equal('你错了')

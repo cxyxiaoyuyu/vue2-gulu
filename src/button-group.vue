@@ -1,7 +1,7 @@
 <template>
-    <div class="button-group" :class="iconPosition" @click="$emit('click')">
-        <g-button class="button" icon-name="left" icon-position="icon-left">上一页</g-button>
-        <g-button class="button" icon-name="right" icon-position="icon-right">下一页</g-button>
+    <div class="button-group" @click="$emit('click')">
+        <g-button class="button" icon="left" icon-position="icon-left">上一页</g-button>
+        <g-button class="button" icon="right" icon-position="icon-right">下一页</g-button>
     </div>
 </template>
 

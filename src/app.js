@@ -43,14 +43,18 @@ new Vue({
     changeInput(e) {
       console.log(e)
     },
-    showToast1(){
-      this.$toast('我是Toast组件')
-    },
-    showToast2(){
-
-    },
-    showToast3(){
-
+    showToast(position){
+      this.$toast(`这是一个toast提示框`, {
+        position,
+        enableHtml: false,
+        closeButton: {
+          text: '好的',
+          callback () {
+            console.log('我已经知道了')
+          }
+        },
+        autoClose: 3,  
+      })
     }
   }
 })

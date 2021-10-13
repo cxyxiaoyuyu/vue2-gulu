@@ -28,12 +28,19 @@
     .row {
       margin-bottom: 30px;
     }
+    h3 {
+      margin-bottom: 20px;
+    }
+    .grid {
+      width: 800px;
+    }
   </style>
 </head>
 
 <body>
   <div id="app">
     <div class="row">
+      <h3>Button 组件</h3>
       <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
       <g-button icon="setting" icon-position="icon-left" :loading="loading2" @click="loading2 = !loading2">设置
       </g-button>
@@ -45,11 +52,37 @@
     
 
     <div class="row">
+      <h3>Input 组件</h3>
       <g-input v-model="message"></g-input>
       <g-button @click="message+=1">+1</g-button> {{message}}
       <g-input value="disabled" disabled></g-input>
       <g-input value="readonly" readonly></g-input>
       <g-input value="" error="不能为空" @change="changeInput"></g-input>
+    </div>
+
+    <div class="row">
+      <h3>Grid 组件</h3>
+      <div class="grid">
+        <g-row>
+          <g-col span="12">12</g-col>
+          <g-col span="12">12</g-col>
+        </g-row>
+        <g-row>
+          <g-col span="2">2</g-col>
+          <g-col span="12">12</g-col>
+        </g-row>
+        <g-row align="between">
+          <g-col span="5">5</g-col>
+          <g-col span="2">2</g-col>
+          <g-col span="12">12</g-col>
+        </g-row>
+        <g-row gutter="20">
+          <g-col span="5">5</g-col>
+          <g-col span="7">7</g-col>
+          <g-col span="12">12</g-col>
+        </g-row>
+      </div>
+     
     </div>
       
   </div>

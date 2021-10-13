@@ -13,7 +13,7 @@
       align: {
         type: String,
         validator (value) {
-          return ['left', 'right', 'center'].includes(value)
+          return ['left', 'right', 'center','between'].includes(value)
         }
       }
     },
@@ -40,6 +40,7 @@
   .row{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10px;
     &.align-left {
       justify-content: flex-start;
     }
@@ -48,6 +49,9 @@
     }
     &.align-center {
       justify-content: center;
+    }
+    &.align-between {
+      justify-content: space-between;
     }
   }
 </style>

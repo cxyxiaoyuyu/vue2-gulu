@@ -13,6 +13,8 @@ import Sider from './sider'
 import Content from './content'
 import Footer from './footer'
 
+import plugin from './plugin'
+
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('button-group',ButtonGroup)
@@ -26,6 +28,8 @@ Vue.component('g-sider',Sider)
 Vue.component('g-content',Content)
 Vue.component('g-footer',Footer)
 
+Vue.use(plugin)
+
 new Vue({
   el: '#app',
   data: {
@@ -38,6 +42,14 @@ new Vue({
   methods: {
     changeInput(e) {
       console.log(e)
+    },
+    showToast1(){
+      this.$toast('我是Toast组件')
+    },
+    showToast2(){
+
+    },
+    showToast3(){
 
     }
   }

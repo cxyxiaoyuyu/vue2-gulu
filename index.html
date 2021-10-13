@@ -34,6 +34,24 @@
     .grid {
       width: 800px;
     }
+
+    .layout {
+      width: 800px;
+      min-height: 100px;
+    }
+    .header,.footer {
+      height: 80px;
+      background: #abcdea;
+    }
+    .sider {
+      width: 180px;
+      background: #abcdef;
+      min-height: 200px;
+    }
+    .content {
+      background: #adeacd;
+      min-height: 200px;
+    }
   </style>
 </head>
 
@@ -82,7 +100,29 @@
           <g-col span="12">12</g-col>
         </g-row>
       </div>
-     
+    </div>
+
+    <div class="row">
+      <h3>Layout组件</h3>
+      <div class="row">
+        <g-layout>
+          <g-header>header</g-header>
+          <g-content>content</g-content>
+          <g-footer>footer</g-footer>
+        </g-layout>
+      </div>
+      
+      <div class="row">
+        <g-layout>
+          <g-header>header</g-header>
+          <g-layout>
+            <g-sider>sider</g-sider>
+            <g-content>content</g-content>
+          </g-layout>
+          <g-footer>footer</g-footer>
+        </g-layout>
+      </div>
+      
     </div>
       
   </div>

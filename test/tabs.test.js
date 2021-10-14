@@ -42,6 +42,7 @@ describe('Tabs', () => {
     let vm = new Vue({
       el: div
     })
+    // 因为$mount 是异步的
     vm.$nextTick(() => {
       let x = vm.$el.querySelector(`.tabs-item[data-name="finance"]`)
       expect(x.classList.contains('active')).to.be.true

@@ -15,6 +15,12 @@ import Footer from './footer'
 
 import plugin from './plugin'
 
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
+
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('button-group',ButtonGroup)
@@ -30,6 +36,12 @@ Vue.component('g-footer',Footer)
 
 Vue.use(plugin)
 
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
+
 new Vue({
   el: '#app',
   data: {
@@ -37,10 +49,8 @@ new Vue({
     loading2: false,
     loading3: true,
     loading4: true,
-    message: 1
-  },
-  created(){
-    this.showToast('top')
+    message: 1,
+    selectedTab: 'sports',
   },
   methods: {
     changeInput(e) {

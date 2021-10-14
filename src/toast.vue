@@ -45,7 +45,6 @@
       }
     },
     mounted () {
-      this.updateStyles()
       this.execAutoClose()
     },
     computed: {
@@ -56,12 +55,6 @@
       }
     },
     methods: {
-      updateStyles () {
-        this.$nextTick(() => {
-          this.$refs.line.style.height =
-            `${this.$refs.toast.getBoundingClientRect().height}px`
-        })
-      },
       execAutoClose () {
         if (this.autoClose) {
           setTimeout(() => {
@@ -85,7 +78,6 @@
 </script>
 <style scoped lang="scss">
   $font-size: 14px;
-  $toast-min-height: 40px;
   $toast-bg: rgba(0, 0, 0, 0.75);
   @keyframes slide-up {
     0% {opacity: 0; transform: translateY(100%);}
@@ -107,6 +99,7 @@
     &.position-top {
       top: 0;
       .toast {
+        display: flex;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         animation: slide-down $animation-duration;
@@ -129,21 +122,22 @@
     }
   }
   .toast {
-    font-size: $font-size; min-height: $toast-min-height; line-height: 1.8;
+    font-size: $font-size; line-height: 1.8;
     display: flex;
     color: white; align-items: center; background: $toast-bg; border-radius: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50); padding: 0 16px;
     .message {
       padding: 8px 0;
+      min-height: 40px;
     }
     .close {
       padding-left: 16px;
       flex-shrink: 0;
     }
     .line {
-      height: 100%;
       border-left: 1px solid #666;
       margin-left: 16px;
+      align-self: stretch;  // 高度自动拉伸
     }
   }
 </style>

@@ -39,6 +39,9 @@ new Vue({
     loading4: true,
     message: 1
   },
+  created(){
+    this.showToast('top')
+  },
   methods: {
     changeInput(e) {
       console.log(e)
@@ -53,7 +56,7 @@ new Vue({
             console.log('我已经知道了')
           }
         },
-        autoClose: true,  
+        autoClose: false,  
       })
     }
   }

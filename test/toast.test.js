@@ -18,7 +18,7 @@ describe('Toast', () => {
       const Constructor = Vue.extend(Toast)
       const vm = new Constructor({
         propsData: {
-          autoClose: 1,
+          autoClose: true,
         }
       }).$mount(div)
       vm.$on('close', () => {

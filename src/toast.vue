@@ -21,7 +21,7 @@
         type: [Boolean, Number],
         default: 5,
         validator (value) {
-          return value === false || typeof value === 'number';
+          return typeof value === 'boolean' || typeof value === 'number';
         }
       },
       closeButton: {

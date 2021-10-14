@@ -53,7 +53,7 @@ new Vue({
             console.log('我已经知道了')
           }
         },
-        autoClose: 3,  
+        autoClose: true,  
       })
     }
   }

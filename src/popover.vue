@@ -1,6 +1,6 @@
 <template>
- <div class="popover" @click="xxx">
-  <div class="content-wrapper" v-if="visible">
+ <div class="popover" @click.stop="xxx">
+  <div class="content-wrapper" v-if="visible" @click.stop>
     <slot name="content"></slot>
   </div>
   <slot></slot>
@@ -14,7 +14,11 @@ export default {
     return { visible: false}
   },
   created(){
-    //document.addEventListener('click',x)
+    document.addEventListener('click',()=>{
+      if(this.visible){
+        this.visible = false
+      }
+    })
   },
   methods: {
     xxx(){
@@ -29,12 +33,16 @@ export default {
   display: inline-block;
   vertical-align: top;
   position: relative;
-  border: 1px solid blue;
+  margin-top: 100px;
   .content-wrapper {
-    border: 1px solid red;
+    border: 1px solid #ddd;
     position: absolute;
     left: 0;
     bottom:100%; 
+    padding: 20px;
+    background:white;
+    margin-bottom: 20px;
+    border-radius: 5px;
   }
 }
 </style>

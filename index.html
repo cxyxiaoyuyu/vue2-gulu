@@ -48,7 +48,7 @@
       background: #abcdef;
       min-height: 200px;
     }
-    .content {
+    .layout .content {
       background: #adeacd;
       min-height: 200px;
     }
@@ -161,6 +161,12 @@
 
       <div class="row">
         <h3>Popover 组件</h3>
+        <g-popover>
+          <template #content>
+            <div>popver的内容</div>
+          </template>
+          <g-button>点我弹出popover</g-button>
+        </g-popover>
       </div>
     </div>
       

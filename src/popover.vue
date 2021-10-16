@@ -1,9 +1,11 @@
 <template>
- <div class="popover" @click.stop="xxx">
-  <div class="content-wrapper" v-if="visible" @click.stop>
+ <div class="popover" @click="toggle">
+  <div class="content-wrapper" ref="contentWrapper" v-show="visible">
     <slot name="content"></slot>
   </div>
-  <slot></slot>
+  <div class="triggerWrapper" ref="triggerWrapper">
+    <slot></slot>
+  </div>
  </div>
 </template>
 
@@ -13,16 +15,37 @@ export default {
   data(){
     return { visible: false}
   },
-  created(){
-    document.addEventListener('click',()=>{
-      if(this.visible){
-        this.visible = false
-      }
-    })
-  },
   methods: {
-    xxx(){
+    positionContent(){
+      document.body.appendChild(this.$refs.contentWrapper)
+      let {top,left} = this.$refs.triggerWrapper.getBoundingClientRect()
+      this.$refs.contentWrapper.style.left = left + window.scrollX +'px'
+      this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
+    },
+    listenToDocument(){
+      let eventHandler = (e) => {
+        if(this.$refs.contentWrapper.contains(e.target)){
+          // 什么都不做 但是会向上冒泡
+        }else{
+          this.visible = false
+          document.removeEventListener('click',eventHandler)
+        }
+      }
+      document.addEventListener('click',eventHandler)
+    },
+    toggle(event){
       this.visible = !this.visible
+      if(this.visible){
+        this.positionContent()
+        // 在事件冒泡之后再在document上添加监听
+        // 我也不知道这里为啥不能用nextTick() ???
+        setTimeout(()=>{
+          this.listenToDocument()
+        })
+        // this.$nextTick(()=>{
+        //   this.listenToDocument()
+        // })
+      }
     }
   }
 }
@@ -33,16 +56,14 @@ export default {
   display: inline-block;
   vertical-align: top;
   position: relative;
-  margin-top: 100px;
-  .content-wrapper {
-    border: 1px solid #ddd;
-    position: absolute;
-    left: 0;
-    bottom:100%; 
-    padding: 20px;
-    background:white;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
+}
+.content-wrapper {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background:white;
+  border-radius: 5px;
+  position: absolute;
+  transform: translateY(-100%); // 防止遮住trigger button
+  width: 300px;
 }
 </style>

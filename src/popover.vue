@@ -22,29 +22,33 @@ export default {
       this.$refs.contentWrapper.style.left = left + window.scrollX +'px'
       this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
     },
-    listenToDocument(){
-      let eventHandler = (e) => {
-        if(this.$refs.contentWrapper.contains(e.target)){
-          // 什么都不做 但是会向上冒泡
-        }else{
-          this.visible = false
-          document.removeEventListener('click',eventHandler)
-        }
+    clickDom(e){
+      if(!this.$refs.contentWrapper.contains(e.target)){
+        this.close()
       }
-      document.addEventListener('click',eventHandler)
+    },
+    open(){
+      this.visible = true
+      this.positionContent()
+       // 在事件冒泡之后再在document上添加监听
+        setTimeout(()=>{
+          document.addEventListener('click',this.clickDom) // 点击的时候再添加监听 节省内存
+        })
+
+        // 我也不知道这里为啥不能用nextTick() ???
+        // this.$nextTick(()=>{
+        //   document.addEventListener('click',this.clickDom)
+        // })
+    },
+    close(){
+      this.visible = false
+      document.removeEventListener('click',this.clickDom)
     },
     toggle(event){
-      this.visible = !this.visible
       if(this.visible){
-        this.positionContent()
-        // 在事件冒泡之后再在document上添加监听
-        // 我也不知道这里为啥不能用nextTick() ???
-        setTimeout(()=>{
-          this.listenToDocument()
-        })
-        // this.$nextTick(()=>{
-        //   this.listenToDocument()
-        // })
+        this.close()
+      }else{
+        this.open()
       }
     }
   }

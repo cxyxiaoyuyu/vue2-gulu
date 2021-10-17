@@ -159,8 +159,8 @@
         </g-tabs>
       </div>
 
+      <h3>Popover 组件</h3>
       <div class="row" style="overflow:hidden">
-        <h3>Popover 组件</h3>
         <g-popover>
           <template #content>
             <div>这是top popver的内容</div>
@@ -181,12 +181,13 @@
         </g-popover>
         <g-popover position='left'>
           <template #content>
-            <div>这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容</div>
+            <div>这是 left popover的内容</div>
           </template>
           <g-button>left</g-button>
         </g-popover>
+      </div>
 
-
+      <div class="row">
         <g-popover trigger="hover">
           <template #content>
             <div>这是top popver的内容</div>
@@ -207,9 +208,19 @@
         </g-popover>
         <g-popover position='left' trigger="hover">
           <template #content>
-            <div>这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容</div>
+            <div>这是 left popover的内容</div>
           </template>
           <g-button>left</g-button>
+        </g-popover>
+      </div>
+
+      <div class="row">
+        <g-popover>
+          <template #content="{close}">
+           <div>点关闭按钮关闭弹框</div> 
+           <g-button @click="close">关闭</g-button>
+          </template>
+          <g-button>close popover</g-button>
         </g-popover>
       </div>
     </div>

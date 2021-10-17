@@ -163,9 +163,27 @@
         <h3>Popover 组件</h3>
         <g-popover>
           <template #content>
-            <div>ppopver的内容popver的内容popver的内容popver的内容popver的内容popver的内容opver的内容</div>
+            <div>这是top popver的内容</div>
           </template>
-          <g-button>点我弹出popover</g-button>
+          <g-button>top</g-button>
+        </g-popover>
+        <g-popover position='bottom'>
+          <template #content>
+            <div>这是 bottom popover的内容</div>
+          </template>
+          <g-button>bottom</g-button>
+        </g-popover>
+        <g-popover position='right'>
+          <template #content>
+            <div>这是right popover的内容</div>
+          </template>
+          <g-button>right</g-button>
+        </g-popover>
+        <g-popover position='left'>
+          <template #content>
+            <div>这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容这是 left popover的内容</div>
+          </template>
+          <g-button>left</g-button>
         </g-popover>
       </div>
     </div>

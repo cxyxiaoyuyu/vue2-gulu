@@ -1,5 +1,5 @@
 <template>
- <div class="popover" @click="toggle">
+ <div class="popover">
   <div class="content-wrapper" ref="contentWrapper" v-show="visible" :class="{[`position-${position}`]:true}">
     <slot name="content"></slot>
   </div>
@@ -22,12 +22,44 @@ export default {
       validator(value){
         return ['top','bottom','left','right'].indexOf(value) >= 0
       }
+    },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator(value){
+        return ['click','hover'].indexOf(value) >= 0
+      }
+    }
+  },
+  mounted(){
+    if(this.trigger === 'click'){
+      this.$refs.triggerWrapper.addEventListener('click',this.toggle)
+    }else{
+      this.$refs.triggerWrapper.addEventListener('mouseenter',this.open)
+      this.$refs.triggerWrapper.addEventListener('mouseleave',this.close)
+    }
+  },
+  computed: {
+    openEvent(){
+      if(this.trigger === 'click') {
+        return 'click'
+      }else {
+        return 'mouseenter'
+      }    
+    },
+    closeEvent(){
+      if(this.trigger === 'click') {
+        return 'click'
+      }else {
+        return 'mouseleave'
+      }    
     }
   },
   methods: {
     positionContent(){
       document.body.appendChild(this.$refs.contentWrapper)
       let {top,left,height,width} = this.$refs.triggerWrapper.getBoundingClientRect()
+      
       if(this.position === 'top'){
         this.$refs.contentWrapper.style.left = left + window.scrollX +'px'
         this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
@@ -117,10 +149,12 @@ export default {
     }
     ::before {
       border-top-color: #999;
+      border-bottom: none;
       top: 100%;
     }
     ::after {
       border-top-color: white;
+      border-bottom: none;
       top: calc(100% - 1px);
     }
   }
@@ -131,10 +165,12 @@ export default {
     }
     ::before {
       border-bottom-color: #999;
+      border-top: none;
       bottom: 100%;
     }
     ::after {
       border-bottom-color: white;
+      border-top: none;
       bottom: calc(100% - 1px);
     }
   }
@@ -147,6 +183,7 @@ export default {
     }
     ::before {
       border-left-color: #999;
+      border-right: none;
       left: 100%;
     }
     ::after {

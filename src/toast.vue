@@ -49,9 +49,10 @@
     },
     computed: {
       toastClasses () {
-        return {
-          [`position-${this.position}`]: true
-        }
+        // return {
+        //   [`position-${this.position}`]: true
+        // }
+        return [`position-${this.position}`]
       }
     },
     methods: {

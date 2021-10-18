@@ -7,17 +7,21 @@ module.exports = {
       {
         title: '入门',
         children: [
-            '/install/',
-            '/get_start/'
+          '/install/',
+          '/get_start/'
         ]
       },
       {
         title: '组件',
         children: [
-            '/components/button',
-            '/components/button-group',
-            '/components/input',
-            '/components/grid',
+          '/components/button',
+          '/components/input',
+          // '/components/grid',
+          // '/components/layout',
+          // '/components/tabs',
+          // '/components/popover',
+          // '/components/toast',
+          // '/components/collapse',
         ]
       }
     ]

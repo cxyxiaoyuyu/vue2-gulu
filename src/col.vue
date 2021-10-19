@@ -1,6 +1,6 @@
 <template>
   <div class="col" :class="colClass" :style="colStyle">
-    <div style="border:1px solid #abcdef;height:50px">
+    <div>
       <slot></slot>
     </div>
   </div>
@@ -70,6 +70,8 @@
   .col {
     $class-prefix: col-;
     flex-shrink: 1;
+    border: 1px solid red;
+    min-height: 40px;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: math.div($n,24) * 100%;

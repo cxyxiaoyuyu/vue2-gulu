@@ -6,7 +6,7 @@ title: 文本框
 
 ## 预览
 <clientOnly>
-    <input-demo style="margin-top:16px"></input-demo>
+	<input-demo style="margin-top:16px"></input-demo>
 </clientOnly>
 
 
@@ -16,19 +16,19 @@ import {Input} from 'xiaoyu-test-1'
 import Vue from vue
 
 new Vue({
-    data(){
-        return {
-            message: 'hello vuepress'
-        }
-    },
-    methods: {
-        changeInput(){
-            console.log('change Input')
-        }
-    },
-    components: {
-        'g-input': Input 
-    },
+	data(){
+		return {
+			message: 'hello vuepress'
+		}
+	},
+	methods: {
+		changeInput(){
+			console.log('change Input')
+		}
+	},
+	components: {
+		'g-input': Input 
+	},
 })
 ```
 
@@ -36,5 +36,7 @@ new Vue({
 <g-input v-model="message"></g-input>
 <g-input value="disabled" disabled></g-input>
 <g-input value="readonly" readonly></g-input>
-<g-input value="" error="不能为空" @change="changeinput"></g-input>
+<div>
+	<g-input v-model="message2" error="不能为空" @change="changeInput"></g-input>
+</div>
 ```

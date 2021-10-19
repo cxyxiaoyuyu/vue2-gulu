@@ -94,6 +94,7 @@
   }
   .wrapper {
     position: fixed;
+    z-index: 1000;
     left: 50%;
     transform: translateX(-50%);
     $animation-duration: 300ms;
@@ -129,7 +130,7 @@
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50); padding: 0 16px;
     .message {
       padding: 8px 0;
-      min-height: 40px;
+      min-height: 18px;
     }
     .close {
       padding-left: 16px;

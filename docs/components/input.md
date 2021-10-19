@@ -6,7 +6,7 @@ title: 文本框
 
 ## 预览
 <clientOnly>
-    <input-demo></input-demo>
+    <input-demo style="margin-top:16px"></input-demo>
 </clientOnly>
 
 

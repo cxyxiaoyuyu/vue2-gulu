@@ -8,7 +8,7 @@ title: 按钮
 
 
 <clientOnly>
-    <button-demo></button-demo>
+    <button-demo style="margin-top: 16px"></button-demo>
 </clientOnly>
 
 ## 使用方法

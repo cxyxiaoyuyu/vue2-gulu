@@ -17,12 +17,14 @@
       @click="loading3 = !loading3"
       >下载</g-button
     >
-    <g-button disabled>下载</g-button>
+    <g-button disabled>禁用</g-button>
+    <g-button-group></g-button-group>
   </div>
 </template>
 
 <script>
 import Button from "../../../src/button.vue";
+import ButtonGroup from "../../../src/button-group.vue";
 export default {
   data() {
     return {
@@ -33,6 +35,7 @@ export default {
   },
   components: {
     "g-button": Button,
+    "g-button-group": ButtonGroup
   },
 };
 </script>

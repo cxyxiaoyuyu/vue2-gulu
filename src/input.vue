@@ -1,15 +1,15 @@
 <template>
     <div class="input-wrap">
         <input class="input" :value="value" :disabled="disabled" :readonly="readonly"
-        :class="{error}"
+        :class="{error:!value}"
          @change="$emit('change',$event.target.value)"
          @focus="$emit('focus',$event.target.value)"
          @input="$emit('input',$event.target.value)"
          @blur="$emit('blur',$event.target.value)"
         />  
-        <template v-if="error">
+        <template v-if="error && !value">
             <g-icon icon="error" class="errorIcon"></g-icon>
-            <span class="errorMessage">{{ error }}</span>
+            <span class="errorMessage">{{ error }}{{ value }}</span>
         </template>
     </div>
     

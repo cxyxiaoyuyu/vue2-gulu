@@ -3,7 +3,9 @@
         <g-input v-model="message"></g-input>
         <g-input value="disabled" disabled></g-input>
         <g-input value="readonly" readonly></g-input>
-        <g-input value="" error="不能为空" @change="changeInput"></g-input>
+        <div>
+            <g-input v-model="message2" error="不能为空" @change="changeInput"></g-input>
+        </div>
     </div>
 </template>
 
@@ -12,7 +14,8 @@ import Input from '../../../src/input.vue'
 export default {
     data(){
         return {
-            message: 'hello vuepress'
+            message: 'hello vuepress',
+            message2: ''
         }
     },
     methods: {

@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Hello VuePress',
+  title: 'Vue2 Gulu',
   base: '/gulu/',
   description: 'Just playing around',
   themeConfig: {

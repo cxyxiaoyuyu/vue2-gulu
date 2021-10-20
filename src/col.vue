@@ -70,7 +70,6 @@
   .col {
     $class-prefix: col-;
     flex-shrink: 1;
-    border: 1px solid red;
     min-height: 40px;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {

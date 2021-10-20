@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Vue2 Gulu',
-  base: '/gulu/',
+  base: '/vue2-gulu/',
   description: 'Just playing around',
   themeConfig: {
     sidebar: [
@@ -17,7 +17,7 @@ module.exports = {
           '/components/button',
           '/components/input',
           '/components/grid',
-          // '/components/layout',
+          '/components/layout',
           // '/components/tabs',
           // '/components/popover',
           '/components/toast',

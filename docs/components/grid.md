@@ -11,32 +11,50 @@ title: 网格布局
 
 
 ## 使用方法
-``` javascript 
-import {Input} from 'xiaoyu-test-1' 
-import Vue from vue
 
-new Vue({
-	data(){
-		return {
-			message: 'hello vuepress'
-		}
-	},
-	methods: {
-		changeInput(){
-			console.log('change Input')
-		}
-	},
-	components: {
-		'g-input': Input 
-	},
-})
-```
 
 ``` html
-<g-input v-model="message"></g-input>
-<g-input value="disabled" disabled></g-input>
-<g-input value="readonly" readonly></g-input>
-<div>
-	<g-input v-model="message2" error="不能为空" @change="changeInput"></g-input>
-</div>
+<div class="grid">
+    <g-row>
+      <g-col span="12">12</g-col>
+      <g-col span="12">12</g-col>
+    </g-row>
+    <g-row>
+      <g-col span="2">2</g-col>
+      <g-col span="12" offset="3">12</g-col>
+    </g-row>
+    <g-row align="between">
+      <g-col span="5">5</g-col>
+      <g-col span="2">2</g-col>
+      <g-col span="12">12</g-col>
+    </g-row>
+    <g-row gutter="20">
+      <g-col span="5">5</g-col>
+      <g-col span="7">7</g-col>
+      <g-col span="12">12</g-col>
+    </g-row>
+  </div>
+```
+``` javascript 
+import Row from "../../../src/row";
+import Col from "../../../src/col";
+export default {
+  components: {
+    "g-row": Row,
+    "g-col": Col
+  },
+};
+```
+```css
+* {
+  box-sizing: border-box;
+}
+.grid {
+  border: 1px solid blue;
+  padding: 12px;
+}
+.grid .col {
+  background: #abcdef;
+  border: 1px solid #a8a8eb;
+}
 ```

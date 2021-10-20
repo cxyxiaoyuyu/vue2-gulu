@@ -1,10 +1,11 @@
 ---
-title: Button-按钮
+title: Popover-弹框
 ---
 
 # 按钮
 
 ## 预览
+
 
 <clientOnly>
     <button-demo style="margin-top: 16px"></button-demo>
@@ -37,6 +38,4 @@ new Vue({
     <g-button icon="download" icon-position="icon-right" :loading="loading3" @click="loading3=!loading3">下载</g-button>
     <g-button disabled>下载</g-button>
 ```
-
-## 选项
 

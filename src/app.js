@@ -27,7 +27,7 @@ import CollapseItem from './collapse-item'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
-Vue.component('button-group',ButtonGroup)
+Vue.component('g-button-group',ButtonGroup)
 Vue.component('g-input',Input)
 Vue.component('g-row',Row)
 Vue.component('g-col',Col)

@@ -11,8 +11,8 @@ describe('Row', () => {
   it('存在.', () => {
     expect(Row).to.exist
   })
-  it('接收 gutter 属性.', (done) => {
-    Vue.component('g-row', Row)
+  xit('接收 gutter 属性.', (done) => {
+    vue.component('g-row', row)
     Vue.component('g-col', Col)
     const div = document.createElement('div')
     document.body.appendChild(div)

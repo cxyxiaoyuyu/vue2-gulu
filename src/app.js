@@ -25,18 +25,20 @@ import Popover from './popover'
 import Collapse from './collapse'
 import CollapseItem from './collapse-item'
 
+import Cascader from './cascader'
+
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
-Vue.component('g-button-group',ButtonGroup)
-Vue.component('g-input',Input)
-Vue.component('g-row',Row)
-Vue.component('g-col',Col)
+Vue.component('g-button-group', ButtonGroup)
+Vue.component('g-input', Input)
+Vue.component('g-row', Row)
+Vue.component('g-col', Col)
 
-Vue.component('g-layout',Layout)
-Vue.component('g-header',Header)
-Vue.component('g-sider',Sider)
-Vue.component('g-content',Content)
-Vue.component('g-footer',Footer)
+Vue.component('g-layout', Layout)
+Vue.component('g-header', Header)
+Vue.component('g-sider', Sider)
+Vue.component('g-content', Content)
+Vue.component('g-footer', Footer)
 
 Vue.use(plugin)
 
@@ -46,12 +48,19 @@ Vue.component('g-tabs-body', TabsBody)
 Vue.component('g-tabs-item', TabsItem)
 Vue.component('g-tabs-pane', TabsPane)
 
-Vue.component('g-popover',Popover)
-Vue.component('g-collapse',Collapse)
-Vue.component('g-collapse-item',CollapseItem)
+Vue.component('g-popover', Popover)
+Vue.component('g-collapse', Collapse)
+Vue.component('g-collapse-item', CollapseItem)
+
+
+Vue.component('g-cascader', Cascader)
+
+import source from './db'
+
+console.log(source)
 new Vue({
   el: "#app",
-  data(){
+  data() {
     return {
       loading1: true,
       loading2: false,
@@ -59,24 +68,25 @@ new Vue({
       loading4: true,
       message: 1,
       selectedTab: 'sports',
-      selectedCollapse: ['2','1']
+      selectedCollapse: ['2', '1'],
+      source,
     }
   },
   methods: {
     changeInput(e) {
       console.log(e)
     },
-    showToast(position){
+    showToast(position) {
       this.$toast(`这是一个toast提示框`, {
         position,
         enableHtml: false,
         closeButton: {
           text: '好的',
-          callback () {
+          callback() {
             console.log('我已经知道了')
           }
         },
-        autoClose: false,  
+        autoClose: false,
       })
     }
   }

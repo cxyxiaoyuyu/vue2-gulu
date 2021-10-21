@@ -36,7 +36,7 @@ Vue.component('g-input',Input)
 <g-input v-model="xxx"></g-input>
 ```
 
-## [文档](cxyxiaoyuyu.github.io/vue2-gulu/
+## ![文档](cxyxiaoyuyu.github.io/vue2-gulu/
 )
 
 

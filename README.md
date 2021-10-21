@@ -37,7 +37,7 @@ Vue.component('g-input',Input)
 ```
 
 ## 文档
-[官网](cxyxiaoyuyu.github.io/vue2-gulu/
+[官网](https://cxyxiaoyuyu.github.io/vue2-gulu/
 )
 
 

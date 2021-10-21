@@ -11,14 +11,18 @@
       >设置</g-button
     >
     <g-button
-      icon-name="download"
+      icon="download"
       icon-position="icon-right"
       :loading="loading3"
       @click="loading3 = !loading3"
       >下载</g-button
     >
     <g-button disabled>禁用</g-button>
-    <g-button-group></g-button-group>
+    <g-button-group>
+      <g-button icon="left" icon-position="icon-left">上一页</g-button>
+      <g-button>中间</g-button>
+      <g-button icon="right" icon-position="icon-right">下一页</g-button>
+    </g-button-group>
   </div>
 </template>
 
@@ -35,7 +39,7 @@ export default {
   },
   components: {
     "g-button": Button,
-    "g-button-group": ButtonGroup
+    "g-button-group": ButtonGroup,
   },
 };
 </script>

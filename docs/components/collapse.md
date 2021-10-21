@@ -2,40 +2,48 @@
 title: Collapse-手风琴 
 ---
 
-# 按钮
+# Collapse-手风琴 
 
-## 预览
+### 预览
 
-
+* 可以展开多个
 <clientOnly>
-    <button-demo style="margin-top: 16px"></button-demo>
+    <collapse-demo style="margin-top: 16px"></collapse-demo>
 </clientOnly>
 
-## 使用方法
-``` javascript 
-import {Button} from 'xiaoyu-test-1' 
-import Vue from vue
+* 只能展开一个
+<clientOnly>
+    <collapse-single-demo style="margin-top: 16px"></collapse-single-demo>
+</clientOnly>
 
-new Vue({
-    data(){
-        return {
-            loading1: true,   
-            loading2: false,   
-            loading3: false,   
-        }
-    },
-    components: {
-        'g-button': Button
-    },
-})
+### 使用方法
+```html
+<g-collapse :selected.sync="selectedCollapse" :single="true">
+    <g-collapse-item title="标题1" name="1">内容一</g-collapse-item>
+    <g-collapse-item title="标题2" name="2">内容二</g-collapse-item>
+    <g-collapse-item title="标题3" name="3">内容三</g-collapse-item>
+</g-collapse>
 ```
 
-``` html 
-    <g-button>按钮</g-button>
-    <g-button icon="setting">按钮</g-button>
-    <g-button icon="setting" :loading="loading1">加载</g-button>
-    <g-button icon="setting" icon-position="icon-right" :loading="loading2" @click="loading2=!loading2">设置</g-button>
-    <g-button icon="download" icon-position="icon-right" :loading="loading3" @click="loading3=!loading3">下载</g-button>
-    <g-button disabled>下载</g-button>
+```javascript
+import Collapse from "../../../src/collapse.vue";
+import CollapseItem from '../../../src/collapse-item.vue';
+export default {
+  data(){
+    return {
+      selectedCollapse: ['2']
+    }
+  },
+  components: {
+    "g-collapse": Collapse,
+    "g-collapse-item": CollapseItem
+  },
+};
 ```
 
+### 选项
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值  |
+| --- | --- | --- | --- | --- |
+| selected | 选择展开的项 | Array | --- | 必填 |
+| single | 是否单一展开 | Boolean | --- | false|

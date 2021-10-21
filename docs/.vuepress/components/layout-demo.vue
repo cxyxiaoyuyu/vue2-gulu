@@ -8,6 +8,7 @@
 
     <hr>
 
+    <div style="margin:20px 0;">包含sider</div>
     <g-layout>
       <g-header>header</g-header>
       <g-layout>

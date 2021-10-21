@@ -20,10 +20,12 @@
     name: 'GuluCol',
     props: {
       span: {
-        type: [Number, String]
+        type: [Number, String],
+        defalut: 24
       },
       offset: {
-        type: [Number, String]
+        type: [Number, String],
+        default: 0
       },
       ipad: {type: Object, validator,},
       narrowPc: {type: Object, validator,},

@@ -25,12 +25,12 @@
         --border-color-hover: #666;
     }
     ```
-2. 安装 xiaoyu-test-1(parcel 方式)
+2. 安装 xiaoyu-vue2-gulu(parcel 方式)
     ```
-    npm i --save xiaoyu-test-1
+    npm i --save xiaoyu-vue2-gulu
     ```
 
-3. 引入 xiaoyu-test-1
+3. 引入 xiaoyu-vue2-gulu
     ```
     import { Button,ButtonGroup,Icon} from 'xiaoyu-vue2-gulu'
     import 'xiaoyu-vue2-gulu/dist/index.css'

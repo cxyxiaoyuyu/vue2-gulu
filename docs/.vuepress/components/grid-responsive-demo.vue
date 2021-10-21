@@ -1,17 +1,9 @@
 <template>
   <div class="grid">
-    <g-row>
-      <g-col span="12">12</g-col>
-      <g-col span="12">12</g-col>
-    </g-row>
-    <g-row>
-      <g-col span="2">2</g-col>
-      <g-col span="12" offset="3">12</g-col>
-    </g-row>
     <g-row align="between">
-      <g-col span="5">5</g-col>
-      <g-col span="2">2</g-col>
-      <g-col span="12">12</g-col>
+      <g-col span="24" :ipad="{span:10}" :narrowPc="{span:6}" :pc="{span:8}"></g-col>
+      <g-col span="24" :ipad="{span:4}"  :narrowPc="{span:12}" :pc="{span:8}"></g-col>
+      <g-col span="24" :ipad="{span:10}" :narrowPc="{span:6}" :pc="{span:8}"></g-col>
     </g-row>
   </div>
 </template>

@@ -15,6 +15,7 @@
       },
       selected: {
         type: Array,
+        require: true,
       }
     },
     data () {

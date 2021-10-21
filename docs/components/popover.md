@@ -2,40 +2,51 @@
 title: Popover-弹框
 ---
 
-# 按钮
+# Popover-弹框 
 
-## 预览
+### 预览
 
-
+* 点击 弹出popover
 <clientOnly>
-    <button-demo style="margin-top: 16px"></button-demo>
+    <popover-demo style="margin-top: 16px"></popover-demo>
 </clientOnly>
 
-## 使用方法
-``` javascript 
-import {Button} from 'xiaoyu-test-1' 
-import Vue from vue
+* hover 弹出popover
+<clientOnly>
+    <popover-hover-demo style="margin-top: 16px"></popover-hover-demo>
+</clientOnly>
 
-new Vue({
-    data(){
-        return {
-            loading1: true,   
-            loading2: false,   
-            loading3: false,   
-        }
-    },
-    components: {
-        'g-button': Button
-    },
-})
-```
-
+### 使用方法
 ``` html 
-    <g-button>按钮</g-button>
-    <g-button icon="setting">按钮</g-button>
-    <g-button icon="setting" :loading="loading1">加载</g-button>
-    <g-button icon="setting" icon-position="icon-right" :loading="loading2" @click="loading2=!loading2">设置</g-button>
-    <g-button icon="download" icon-position="icon-right" :loading="loading3" @click="loading3=!loading3">下载</g-button>
-    <g-button disabled>下载</g-button>
+<g-popover position="bottom">
+    <template #content>
+        <div>这是 bottom popover的内容</div>
+    </template>
+    <g-button>bottom</g-button>
+</g-popover>
 ```
+
+### 可关闭的popover
+<clientOnly>
+    <popover-close-demo style="margin-top: 16px"></popover-close-demo>
+</clientOnly>
+
+
+### 使用方法
+```html
+<g-popover>
+    <template #content="{close}">
+        <div>点关闭按钮关闭弹框</div> 
+        <g-button @click="close">关闭</g-button>
+    </template>
+    <g-button>close popover</g-button>
+</g-popover>
+```
+
+### Props
+| 参数 | 说明 | 类型 | 可选值 | 默认值  |
+| --- | --- | --- | --- | --- |
+| position | 弹框位置 | String | top/bottom/left/right | top |
+| trigger | 触发方式 | String | click/hover | click |
+
 

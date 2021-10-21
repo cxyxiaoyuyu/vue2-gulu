@@ -30,7 +30,8 @@
                 default: false
             },
             error: {
-                type: String
+                type: String,
+                default: '不能为空'
             }
         },
         components: {

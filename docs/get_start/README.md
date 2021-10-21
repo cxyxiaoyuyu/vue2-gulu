@@ -12,7 +12,7 @@ title: 快速上手
 ## 引入组件 
 
 ```javascript
-import {Button} from 'xiaoyu-test-1'
+import {Button} from 'xiaoyu-vue2-gulu'
 import Vue from 'vue'
 
 new Vue({

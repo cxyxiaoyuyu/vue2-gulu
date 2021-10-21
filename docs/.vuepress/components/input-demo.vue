@@ -19,8 +19,8 @@ export default {
         }
     },
     methods: {
-        changeInput(){
-            console.log('change Input')
+        changeInput(value){
+            console.log('change Input',value)
         }
     },
     components: {

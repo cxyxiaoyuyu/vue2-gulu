@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <g-collapse :selected.sync="selectedCollapse" :single="true">
+      <g-collapse-item title="标题1" name="1">内容一</g-collapse-item>
+      <g-collapse-item title="标题2" name="2">内容二</g-collapse-item>
+      <g-collapse-item title="标题3" name="3">内容三</g-collapse-item>
+    </g-collapse>
+  </div>
+</template>
+
+<script>
+import Collapse from "../components/collapse.vue";
+import CollapseItem from '../components/collapse-item.vue';
+export default {
+  data(){
+    return {
+      selectedCollapse: ['2']
+    }
+  },
+  components: {
+    "g-collapse": Collapse,
+    "g-collapse-item": CollapseItem
+  },
+};
+</script>
+
+    

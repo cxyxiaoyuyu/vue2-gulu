@@ -1,55 +1,27 @@
 {
   "name": "xiaoyu-vue2-gulu",
   "version": "0.0.2",
-  "description": "",
-  "main": "./dist/index.js",
-  "files": [
-    "dist/**/*"
-  ],
+  "private": true,
   "scripts": {
-    "start": "parcel index.html --no-cache",
-    "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-minify && karma start --single-run",
-    "build": "parcel build index.js --no-minify",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cxyxiaoyuyu/gulu.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cxyxiaoyuyu/gulu/issues"
-  },
-  "homepage": "https://github.com/cxyxiaoyuyu/gulu#readme",
   "dependencies": {
-    "@vue/composition-api": "^1.2.4",
-    "vue": "2.6.14",
-    "vue-hot-reload-api": "^2.3.4"
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "xiaoyu-vue2-gulu": "^0.0.2"
   },
   "devDependencies": {
-    "@vue/component-compiler-utils": "^3.2.2",
-    "chai": "*",
-    "chai-spies": "^1.0.0",
-    "karma": "^6.3.4",
-    "karma-chai": "^0.1.0",
-    "karma-chai-spies": "^0.1.4",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-mocha": "^2.0.1",
-    "karma-sinon-chai": "^2.0.2",
-    "mocha": "^9.1.2",
-    "parcel-bundler": "^1.12.5",
-    "sass": "^1.42.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
-    "sinon": "^11.1.2",
-    "sinon-chai": "^3.7.0",
-    "vue-template-compiler": "^2.6.14",
-    "vuepress": "^1.8.2"
+    "vue-template-compiler": "^2.6.11"
   },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
-  }
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

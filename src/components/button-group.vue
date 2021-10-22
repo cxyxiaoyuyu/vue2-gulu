@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Button from "./Button";
+import Button from "./button";
 export default {
   components: {
     "g-button": Button,

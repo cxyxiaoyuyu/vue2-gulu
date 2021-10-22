@@ -68,20 +68,19 @@
   }
 </script>
 <style scoped lang="scss">
-  @use "sass:math";
   .col {
     $class-prefix: col-;
     flex-shrink: 1;
     min-height: 40px;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        width: math.div($n,24) * 100%;
+        width: ($n / 24) * 100%;
       }
     }
     $class-prefix: offset-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
-        margin-left: math.div($n,24) * 100%;
+        margin-left: ($n / 24) * 100%;
       }
     }
     
@@ -89,13 +88,13 @@
       $class-prefix: col-ipad-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          width: math.div($n,24) * 100%;
+          width: ($n / 24) * 100%;
         }
       }
       $class-prefix: offset-ipad-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          margin-left: math.div($n,24) * 100%;
+          margin-left: ($n / 24) * 100%;
         }
       }
     }
@@ -104,13 +103,13 @@
       $class-prefix: col-narrow-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          width: math.div($n,24) * 100%;
+          width: ($n / 24) * 100%;
         }
       }
       $class-prefix: offset-narrow-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          margin-left: math.div($n,24) * 100%;
+          margin-left: ($n / 24) * 100%;
         }
       }
     }
@@ -119,13 +118,13 @@
       $class-prefix: col-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          width: math.div($n,24) * 100%;
+          width: ($n / 24) * 100%;
         }
       }
       $class-prefix: offset-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          margin-left: math.div($n,24) * 100%;
+          margin-left: ($n / 24) * 100%;
         }
       }
     }
@@ -134,13 +133,13 @@
       $class-prefix: col-wide-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          width: math.div($n,24) * 100%;
+          width: ($n / 24) * 100%;
         }
       }
       $class-prefix: offset-wide-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
-          margin-left: math.div($n,24) * 100%;
+          margin-left: ($n / 24) * 100%;
         }
       }
     }

@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import Button from "../../../src/components/button.vue";
-import ButtonGroup from "../../../src/components/button-group.vue";
+import Button from "../components/button.vue";
+import ButtonGroup from "../components/button-group.vue";
 export default {
   data() {
     return {

@@ -16,6 +16,7 @@
 
     ```
     npm i --save xiaoyu-vue2-gulu
+    yarn add xiaoyu-vue2-gulu
     ```
 
 3. 快速上手 

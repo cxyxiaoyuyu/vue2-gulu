@@ -1,13 +1,16 @@
 {
   "name": "xiaoyu-vue2-gulu",
-  "version": "0.0.2",
-  "private": true,
+  "version": "0.0.3",
+  "main": "./index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name lib index.js",
     "test": "vue-cli-service test:unit",
     "karma:test": "karma start --single-sun",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -24,7 +27,8 @@
     "sass-loader": "^7.0.1",
     "sinon": "^11.1.2",
     "sinon-chai": "^3.7.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.8.2"
   },
   "browserslist": [
     "> 1%",

@@ -19,8 +19,8 @@ title: Toast-提示框
 
 ```javascript
 import Vue from 'vue'
-import Plugin from "../../../src/plugin";
-import Button from '../../../src/button.vue'
+import Plugin from "@/components/plugin";
+import Button from '@/components/button.vue'
 Vue.use(Plugin)
 export default {
   components: {

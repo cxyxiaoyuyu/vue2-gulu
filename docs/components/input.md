@@ -2,7 +2,7 @@
 title: Input-文本框 
 ---
 
-# Inpug-文本框
+# Input-文本框
 
 ### 预览
 <clientOnly>

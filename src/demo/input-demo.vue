@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Input from '../../../src/input.vue'
+import Input from '../../../src/components/input.vue'
 export default {
     data(){
         return {

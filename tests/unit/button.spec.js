@@ -3,7 +3,7 @@ import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
 chai.use(sinonChai)
 
-import {shallowMount,mount} from '@vue/test-utils'
+import {mount} from '@vue/test-utils'
 import Button from '@/components/button'
 
 describe('Button组件: ', () => {
@@ -16,10 +16,7 @@ describe('Button组件: ', () => {
                 icon: 'settings'
             }
         })
-        const vm = wrapper.vm
-        const useElement = vm.$el.querySelector('use')
-        expect(useElement.getAttribute('xlink:href')).to.equal('#icon-settings')
-        vm.$destroy()
+        expect(wrapper.find('use').attributes('href')).to.equal('#icon-settings')
     })
     it('可以设置loading.', () => {
         const wrapper = mount(Button,{
@@ -28,11 +25,10 @@ describe('Button组件: ', () => {
                 loading: true
             }
         })
-        const vm = wrapper.vm
-        const useElements = vm.$el.querySelectorAll('use')
-        expect(useElements.length).to.equal(1)
-        expect(useElements[0].getAttribute('xlink:href')).to.equal('#icon-loading')
-        vm.$destroy()
+        const useEles = wrapper.findAll('use')
+        expect(useEles.length).to.equal(1)
+        console.log(useEles.at(0))
+        expect(useEles.at(0).attributes('href')).to.equal('#icon-loading')
     })
     xit('icon 默认的 order 是 1', () => {
         const wrapper = mount(Button,{

@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import Tabs from "../../../src/tabs";
-import TabsHead from "../../../src/tabs-head";
-import TabsBody from "../../../src/tabs-body";
-import TabsItem from "../../../src/tabs-item";
-import TabsPane from "../../../src/tabs-pane";
-import Button from "../../../src/button";
+import Tabs from "../../../src/components/tabs";
+import TabsHead from "../../../src/components/tabs-head";
+import TabsBody from "../../../src/components/tabs-body";
+import TabsItem from "../../../src/components/tabs-item";
+import TabsPane from "../../../src/components/tabs-pane";
+import Button from "../../../src/components/button";
 export default {
   components: {
     "g-tabs": Tabs,

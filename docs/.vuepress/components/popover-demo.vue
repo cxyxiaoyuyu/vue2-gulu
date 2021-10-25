@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import Popover from '../../../src/popover'
-import Button from '../../../src/button'
+import Popover from '../../../src/components/popover'
+import Button from '../../../src/components/button'
 export default {
   components: {
     'g-popover': Popover,

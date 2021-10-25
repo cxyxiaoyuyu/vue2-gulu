@@ -1,19 +1,19 @@
-const expect = chai.expect;
-import Vue from 'vue'
 import Tabs from '@/components/tabs'
 import TabsHead from '@/components/tabs-head'
 import TabsBody from '@/components/tabs-body'
 import TabsItem from '@/components/tabs-item'
 import TabsPane from '@/components/tabs-pane'
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+chai.use(sinonChai)
 
-Vue.component('g-tabs', Tabs)
-Vue.component('g-tabs-head', TabsHead)
-Vue.component('g-tabs-body', TabsBody)
-Vue.component('g-tabs-item', TabsItem)
-Vue.component('g-tabs-pane', TabsPane)
+import { mount,config } from '@vue/test-utils'
+import Vue from 'vue'
 
-Vue.config.productionTip = false
-Vue.config.devtools = false
+// config.provide.eventBus =  { }
+
+
 
 describe('TabsItem', () => {
 
@@ -22,25 +22,27 @@ describe('TabsItem', () => {
   })
 
   it('接受 name 属性', () => {
-    const Constructor = Vue.extend(TabsItem)
-    const vm = new Constructor({
+    const wrapper = mount(TabsItem,{
       propsData: {
         name: 'xxx',
-      }
-    }).$mount()
-    expect(vm.$el.getAttribute('data-name')).to.eq('xxx')
+      },
+    })
+    expect(wrapper.attributes('data-name')).to.eq('xxx')
   })
   it('接受 disabled 属性', () => {
-    const Constructor = Vue.extend(TabsItem)
-    const vm = new Constructor({
+    const wrapper = mount(TabsItem,{
       propsData: {
         disabled: true,
+        name: 'xxx'
       }
-    }).$mount()
-    expect(vm.$el.classList.contains('disabled')).to.be.true
+    })
+    expect(wrapper.classes('disabled')).to.be.true
+
     const callback = sinon.fake();
+    const vm = wrapper.vm
     vm.$on('click', callback)
     vm.$el.click()
+
     expect(callback).to.have.not.been.called
   })
 })

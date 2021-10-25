@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Collapse from "../../../src/collapse.vue";
-import CollapseItem from '../../../src/collapse-item.vue';
+import Collapse from "../../../src/components/collapse.vue";
+import CollapseItem from '../../../src/components/collapse-item.vue';
 export default {
   data(){
     return {

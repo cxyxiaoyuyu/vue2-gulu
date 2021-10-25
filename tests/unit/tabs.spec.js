@@ -1,10 +1,12 @@
-const expect = chai.expect;
+import chai, { expect } from 'chai'
 import Vue from 'vue'
-import Tabs from '../src/tabs'
-import TabsHead from '../src/tabs-head'
-import TabsBody from '../src/tabs-body'
-import TabsItem from '../src/tabs-item'
-import TabsPane from '../src/tabs-pane'
+import Tabs from '@/components/tabs'
+import TabsHead from '@/components/tabs-head'
+import TabsBody from '@/components/tabs-body'
+import TabsItem from '@/components/tabs-item'
+import TabsPane from '@/components/tabs-pane'
+
+import { mount } from '@vue/test-utils'
 
 Vue.component('g-tabs', Tabs)
 Vue.component('g-tabs-head', TabsHead)
@@ -21,13 +23,13 @@ describe('Tabs', () => {
     expect(Tabs).to.exist
   })
 
-  it('接受 selected 属性', (done) => {
-
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    div.innerHTML = `
-      <g-tabs selected="finance">
-        <g-tabs-head>
+  it('接受 selected 属性', async () => {
+    const wrapper = await mount(Tabs, {
+      propsData: {
+        selected: 'finance'
+      },
+      slots: {
+        default: `<g-tabs-head>
           <g-tabs-item name="woman"> 美女 </g-tabs-item>
           <g-tabs-item name="finance"> 财经 </g-tabs-item>
           <g-tabs-item name="sports"> 体育 </g-tabs-item>
@@ -36,18 +38,10 @@ describe('Tabs', () => {
           <g-tabs-pane name="woman"> 美女相关资讯 </g-tabs-pane>
           <g-tabs-pane name="finance"> 财经相关资讯 </g-tabs-pane>
           <g-tabs-pane name="sports"> 体育相关资讯 </g-tabs-pane>
-        </g-tabs-body>
-      </g-tabs>
-    `
-    let vm = new Vue({
-      el: div
+        </g-tabs-body>`
+      }
     })
-    // 因为$mount 是异步的
-    vm.$nextTick(() => {
-      let x = vm.$el.querySelector(`.tabs-item[data-name="finance"]`)
-      expect(x.classList.contains('active')).to.be.true
-      done()
-    })
+    expect(wrapper.find(`.tabs-item[data-name="finance"]`).classes('active')).to.be.true
   })
 
   it('可以接受 direction prop', () => {

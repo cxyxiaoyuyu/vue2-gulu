@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import Layout from "../../../src/layout";
-import Header from "../../../src/header";
-import Sider from "../../../src/sider";
-import Content from "../../../src/content";
-import Footer from "../../../src/footer";
+import Layout from "../../../src/components/layout";
+import Header from "../../../src/components/header";
+import Sider from "../../../src/components/sider";
+import Content from "../../../src/components/content";
+import Footer from "../../../src/components/footer";
 export default {
   components: {
     "g-layout": Layout,

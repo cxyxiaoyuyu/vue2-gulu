@@ -1,9 +1,10 @@
-const expect = chai.expect;
-import Vue from 'vue'
-import Input from '../src/input'
+import chai, {expect} from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+chai.use(sinonChai)
 
-Vue.config.productionTip = false
-Vue.config.devtools = false
+import Input from '@/components/input'
+import {mount} from '@vue/test-utils'
 
 describe('Input组件: ', () => {
 
@@ -13,62 +14,50 @@ describe('Input组件: ', () => {
 
 
   describe('props', () => {
-    const Constructor = Vue.extend(Input)
-    let vm
-    afterEach(() => {
-      vm.$destroy()
-    })
     it('接收 value', () => {
-      vm = new Constructor({
+      const wrapper = mount(Input,{
         propsData: {
           value: '1234'
         }
-      }).$mount()
+      })
+      const vm = wrapper.vm
       const inputElement = vm.$el.querySelector('input')
       expect(inputElement.value).to.equal('1234')
     })
 
     it('接收 disabled', () => {
-      vm = new Constructor({
+      const vm = mount(Input,{
         propsData: {
           disabled: true
         }
-      }).$mount()
+      }).vm
       const inputElement = vm.$el.querySelector('input')
       expect(inputElement.disabled).to.equal(true)
     })
     it('接收 readonly', () => {
-      vm = new Constructor({
+      const wrapper = mount(Input,{
         propsData: {
           readonly: true
         }
-      }).$mount()
-      const inputElement = vm.$el.querySelector('input')
-      expect(inputElement.readOnly).to.equal(true)
+      })
+      expect(wrapper.find('input').attributes().readonly).to.equal('readonly')
     })
 
     it('接收 error', () => {
-      vm = new Constructor({
+      const wrapper = mount(Input,{
         propsData: {
           error: '你错了'
         }
-      }).$mount()
-      const useElement = vm.$el.querySelector('use')
-      expect(useElement.getAttribute('xlink:href')).to.equal('#icon-error')
-      const errorMessage = vm.$el.querySelector('.errorMessage')
-      expect(errorMessage.innerText).to.equal('你错了')
+      })
+      expect(wrapper.find('use').attributes().href).to.equal('#icon-error')
+      expect(wrapper.find('.errorMessage').text()).to.equal('你错了')
     })
   })
   describe('事件', () => {
-    const Constructor = Vue.extend(Input)
-    let vm
-    afterEach(() => {
-      vm.$destroy()
-    })
     it('支持 change/input/focus/blur 事件', () => {
       ['change','input','focus','blur']
         .forEach((eventName) => {
-          vm = new Constructor({}).$mount()
+          const vm = mount(Input,{}).vm 
           const callback = sinon.fake();
           vm.$on(eventName, callback)
           //触发input的change 事件

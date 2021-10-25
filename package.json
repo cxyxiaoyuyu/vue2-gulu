@@ -1,6 +1,6 @@
 {
   "name": "xiaoyu-vue2-gulu",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./index.js",
   "scripts": {
     "serve": "vue-cli-service serve",

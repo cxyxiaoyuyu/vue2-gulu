@@ -3,7 +3,7 @@ import ButtonGroup from './src/components/button-group'
 import Icon from './src/components/icon'
 import Input from './src/components/input'
 import Col from './src/components/col'
-import Row from './src/components/Row'
+import Row from './src/components/row'
 
 import Layout from './src/components/layout'
 import Header from './src/components/header'

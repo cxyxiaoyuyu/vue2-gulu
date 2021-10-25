@@ -4,11 +4,10 @@
   "main": "./index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve:dist": "serve -s dist",    
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name lib index.js",
     "test": "vue-cli-service test:unit",
-    "karma:test": "karma start --single-sun",
-    "lint": "vue-cli-service lint",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },

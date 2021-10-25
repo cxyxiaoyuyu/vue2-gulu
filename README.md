@@ -38,9 +38,23 @@ Vue.component('g-input',Input)
 <g-input v-model="xxx"></g-input>
 ```
 
-* toast 组件引入和使用 
+* Toast 组件引入和使用 
 ```javascript
 import {Plugin} from 'xiaoyu-vue2-gulu'
+import Vue from 'vue'
+Vue.use(Plugin)
+
+new Vue({
+    el: '#app'
+    methods: {
+        showToast(){
+            this.$toast('hello toast',{
+                position: 'middle',
+                autoClose: 5  // 5 秒后自动关闭
+            })
+        }
+    }
+})
 ```
 ## 文档
 [官网](https://cxyxiaoyuyu.github.io/vue2-gulu/

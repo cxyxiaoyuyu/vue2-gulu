@@ -4,6 +4,7 @@ install:
 node_js:
   - "10"
   - "11"
+  - "12"
 addons:
   chrome: stable
 sudo: required

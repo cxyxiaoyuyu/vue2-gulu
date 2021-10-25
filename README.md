@@ -16,27 +16,32 @@
 
     ```
     npm i --save xiaoyu-vue2-gulu
+    或
     yarn add xiaoyu-vue2-gulu
     ```
 
 3. 快速上手 
 
-* 引入
+
+* 普通组件引入
 
 ``` js
 import { Button,Input } from 'xiaoyu-vue2-gulu'
-import 'xiaoyu-vue2-gulu/dist/index.css'
 
 Vue.component('g-button',Button)
 Vue.component('g-input',Input)
 ```
 
-* 使用
+* 普通组件使用
 ```html
 <g-button>按钮</g-button>
 <g-input v-model="xxx"></g-input>
 ```
 
+* toast 组件引入和使用 
+```javascript
+import {Plugin} from 'xiaoyu-vue2-gulu'
+```
 ## 文档
 [官网](https://cxyxiaoyuyu.github.io/vue2-gulu/
 )

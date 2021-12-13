@@ -32,6 +32,7 @@ module.exports = {
           '/components/popover',
           '/components/toast',
           '/components/collapse',
+          '/components/breadcrumb',
         ]
       }
     ]

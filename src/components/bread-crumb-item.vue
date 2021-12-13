@@ -1,5 +1,5 @@
 <template>
-  <div :class="['bread-crumb-item',{'is-link': to.path}]" @click="toPath">
+  <div :class="['bread-crumb-item',{'is-link': to}]" @click="toPath">
     <slot></slot>
     <span class="seprator">{{seprator}}</span>
   </div>
@@ -30,8 +30,9 @@ export default {
 .bread-crumb-item.is-link {
   cursor: pointer; 
   color: #333;
+  font-weight: bold;
 }
 .seprator {
-  padding: 0 15px;
+  padding: 0 10px;
 }
 </style>

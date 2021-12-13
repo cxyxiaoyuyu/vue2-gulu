@@ -1,5 +1,6 @@
 <template>
   <div>
+    <bread-crumb-demo></bread-crumb-demo>
     <icon-demo></icon-demo>
     <button-demo></button-demo>
     <collapse-demo></collapse-demo>
@@ -22,12 +23,13 @@ import CollapseDemo from "../src/demo/collapse-demo.vue";
 import CollapseSingleDemo from "../src/demo/collapse-single-demo.vue";
 import GridDemo from "../src/demo/grid-demo.vue";
 import GridResponsiveDemo from "../src/demo/grid-responsive-demo.vue";
-import LayoutDemo from '../src/demo/layout-demo.vue'
-import PopoverDemo from '../src/demo/popover-demo.vue'
-import PopoverHoverDemo from '../src/demo/popover-hover-demo.vue'
-import PopoverCloseDemo from '../src/demo/popover-close-demo.vue'
-import TabsDemo from '../src/demo/tabs-demo.vue'
-import ToastDemo from '../src/demo/toast-demo.vue'
+import LayoutDemo from "../src/demo/layout-demo.vue";
+import PopoverDemo from "../src/demo/popover-demo.vue";
+import PopoverHoverDemo from "../src/demo/popover-hover-demo.vue";
+import PopoverCloseDemo from "../src/demo/popover-close-demo.vue";
+import TabsDemo from "../src/demo/tabs-demo.vue";
+import ToastDemo from "../src/demo/toast-demo.vue";
+import BreadCrumbDemo from "../src/demo/bread-crumb-demo.vue";
 export default {
   components: {
     IconDemo,
@@ -42,6 +44,7 @@ export default {
     PopoverCloseDemo,
     TabsDemo,
     ToastDemo,
+    BreadCrumbDemo,
   },
 };
 </script>

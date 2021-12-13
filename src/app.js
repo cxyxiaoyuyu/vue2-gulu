@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import Button from './button'
+import Button from './components/button'
 import Icon from './icon'
 import ButtonGroup from './button-group'
 import Input from './input'
@@ -26,6 +26,8 @@ import Collapse from './collapse'
 import CollapseItem from './collapse-item'
 
 import Cascader from './cascader'
+
+import BreadCrumb from './breadcrumb'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -54,6 +56,8 @@ Vue.component('g-collapse-item', CollapseItem)
 
 
 Vue.component('g-cascader', Cascader)
+
+Vue.component('g-breadcrumb',BreadCrumb)
 
 import source from './db'
 

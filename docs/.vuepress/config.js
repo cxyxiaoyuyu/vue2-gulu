@@ -33,6 +33,7 @@ module.exports = {
           '/components/toast',
           '/components/collapse',
           '/components/breadcrumb',
+          '/components/drawer',
         ]
       }
     ]

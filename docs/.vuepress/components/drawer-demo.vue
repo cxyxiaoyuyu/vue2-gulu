@@ -14,13 +14,12 @@
 </template>
 
 <script>
-import Drawer from "@/components/drawer.vue";
-import Button from "@/components/button.vue";
+import Drawer from "../../../src/components/drawer.vue";
+import Button from "../../../src/components/button.vue";
 export default {
   data() {
     return {
       drawerVisible: false,
-      innerDrawer: false,
       direction: 'top'
     };
   },

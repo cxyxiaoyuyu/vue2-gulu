@@ -85,7 +85,7 @@ export default {
   &.open {
     height: 100vh;
     opacity: 1;
-
+    transition-delay: 0ms;
     .drawer {
       &.top,
       &.bottom {

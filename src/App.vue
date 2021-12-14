@@ -1,5 +1,6 @@
 <template>
   <div>
+    <drawer-demo></drawer-demo>
     <bread-crumb-demo></bread-crumb-demo>
     <icon-demo></icon-demo>
     <button-demo></button-demo>
@@ -30,6 +31,7 @@ import PopoverCloseDemo from "../src/demo/popover-close-demo.vue";
 import TabsDemo from "../src/demo/tabs-demo.vue";
 import ToastDemo from "../src/demo/toast-demo.vue";
 import BreadCrumbDemo from "../src/demo/bread-crumb-demo.vue";
+import DrawerDemo from "../src/demo/drawer-demo.vue";
 export default {
   components: {
     IconDemo,
@@ -45,6 +47,7 @@ export default {
     TabsDemo,
     ToastDemo,
     BreadCrumbDemo,
+    DrawerDemo
   },
 };
 </script>
